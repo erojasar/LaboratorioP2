@@ -53,7 +53,7 @@ public class LibreriaRuiz {
                 String creador = estantes.get(i).getLibros().get(j).getAutor();
                 double costo = estantes.get(i).getLibros().get(j).getPrecioVenta();
                 String editor = estantes.get(i).getLibros().get(j).getEditorial();
-                if(name == nombre && antiguedad == nuevo && creador == autor && costo == precio && editor == editorial){
+                if(name.equals(nombre) && antiguedad == nuevo && creador.equals(autor) && costo == precio && editor.equals(editorial)){
                     estantes.get(i).getLibros().remove(j);
                     return true;
                 }
@@ -70,8 +70,10 @@ public class LibreriaRuiz {
             for (int j = 0; j < estantes.get(i).getLibros().size(); j++) {
                 String name = estantes.get(i).getLibros().get(j).getNombre();
                 boolean antiguedad = estantes.get(i).getLibros().get(j).isNuevo();
-                if(name == nombre && antiguedad == nuevo){
-                    System.out.println("Hay un libro en el estante #" + estantes.get(i).getId());
+                if(name.equals(nombre)){
+                    if(antiguedad == nuevo){
+                        System.out.println("Hay un libro en el estante #" + estantes.get(i).getId());
+                    }
                 }
             }
         }
@@ -86,8 +88,10 @@ public class LibreriaRuiz {
             for (int j = 0; j < estantes.get(i).getLibros().size(); j++) {
                 String creador = estantes.get(i).getLibros().get(j).getAutor();
                 boolean antiguedad = estantes.get(i).getLibros().get(j).isNuevo();
-                if(creador == autor && antiguedad == nuevo){
-                    System.out.println("Hay un libro en el estante #" + estantes.get(i).getId());
+                if(creador.equals(autor)){
+                    if(antiguedad == nuevo){
+                        System.out.println("Hay un libro en el estante #" + estantes.get(i).getId());
+                    }
                 }
             }
         }
@@ -117,8 +121,10 @@ public class LibreriaRuiz {
             for (int j = 0; j < estantes.get(i).getLibros().size(); j++) {
                 String editor = estantes.get(i).getLibros().get(j).getEditorial();
                 boolean antiguedad = estantes.get(i).getLibros().get(j).isNuevo();
-                if(editor == editorial && antiguedad == nuevo){
-                    System.out.println("Hay un libro en el estante #" + estantes.get(i).getId());
+                if(editor.equals(editorial)){
+                    if(antiguedad == nuevo){
+                        System.out.println("Hay un libro en el estante #" + estantes.get(i).getId());
+                    }
                 }
             }
         }
